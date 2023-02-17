@@ -1,5 +1,4 @@
 #include "stdio.h"
-#include "signal.h"
 
 #ifndef SIGIOT
 #ifdef SIGABRT
@@ -31,9 +30,6 @@ void sig_die(const char *s, int kill)
 		f_exit();
 		fflush(stderr);
 		/* now get a core */
-#ifdef SIGIOT
-		signal(SIGIOT, SIG_DFL);
-#endif
 		abort();
 		}
 	else {
