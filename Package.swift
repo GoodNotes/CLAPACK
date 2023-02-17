@@ -32,13 +32,22 @@ let package = Package(
         "BLAS/TESTING",
         "BLAS/SRC/CMakeLists.txt",
         "BLAS/SRC/Makefile",
+        "INSTALL/lawn81.pdf",
+        "INSTALL/Makefile",
+        "INSTALL/lawn81.tex",
+        "INSTALL/psfig.tex",
       ],
-      sources: ["SRC", "F2CLIBS", "BLAS/SRC"],
+      sources: ["SRC", "F2CLIBS", "BLAS/SRC", "INSTALL"],
       publicHeadersPath: "INCLUDE",
       cSettings: [
         .headerSearchPath("./F2CLIBS/libf2c/"),
         .unsafeFlags(["-DINTEGER_STAR_8"]),
       ]
-    )
+    ),
+    .testTarget(
+      name: "CLAPACKTests",
+      dependencies: ["CLAPACK"],
+      path: "BUILD_TESTS"
+    ),
   ]
 )
