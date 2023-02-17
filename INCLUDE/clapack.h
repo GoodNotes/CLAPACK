@@ -3,6 +3,9 @@
 #ifndef __CLAPACK_H
 #define __CLAPACK_H
 
+#include "f2c.h"
+#include "blaswrap.h"
+
 /* Subroutine */ int caxpy_(integer *n, complex *ca, complex *cx, integer *
 	incx, complex *cy, integer *incy);
 
