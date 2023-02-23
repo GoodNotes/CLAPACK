@@ -2354,7 +2354,7 @@ doublereal clantr_(char *norm, char *uplo, char *diag, integer *m, integer *n,
 	doublereal *vr, integer *ldvr, doublereal *work, integer *lwork, 
 	integer *info);
 
-/* Subroutine */ int dggevx_(char *balanc, char *jobvl, char *jobvr, char *
+/* Subroutine */ int dggevx_CLAPACK(char *balanc, char *jobvl, char *jobvr, char *
 	sense, integer *n, doublereal *a, integer *lda, doublereal *b, 
 	integer *ldb, doublereal *alphar, doublereal *alphai, doublereal *
 	beta, doublereal *vl, integer *ldvl, doublereal *vr, integer *ldvr, 

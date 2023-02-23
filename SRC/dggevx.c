@@ -21,7 +21,7 @@ static integer c__0 = 0;
 static doublereal c_b59 = 0.;
 static doublereal c_b60 = 1.;
 
-/* Subroutine */ int dggevx_(char *balanc, char *jobvl, char *jobvr, char *
+/* Subroutine */ int dggevx_CLAPACK(char *balanc, char *jobvl, char *jobvr, char *
 	sense, integer *n, doublereal *a, integer *lda, doublereal *b, 
 	integer *ldb, doublereal *alphar, doublereal *alphai, doublereal *
 	beta, doublereal *vl, integer *ldvl, doublereal *vr, integer *ldvr, 
