@@ -8,7 +8,10 @@
 #define OFF_T off64_t
 #endif
 
-#ifdef __linux__
+#if defined(ANDROID) || defined(__ANDROID__) || defined(__android__)
+#define USE_LARGEFILE
+#elif defined(__linux__)
+#error "NOOOOOOOO"
 #define USE_LARGEFILE
 #define OFF_T __off64_t
 #endif
