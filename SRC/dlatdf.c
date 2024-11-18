@@ -49,9 +49,11 @@ static doublereal c_b37 = -1.;
     integer iwork[8];
     doublereal splus;
     extern /* Subroutine */ int dgesc2_(integer *, doublereal *, integer *, 
-	    doublereal *, integer *, integer *, doublereal *), dgecon_(char *, 
+	    doublereal *, integer *, integer *, doublereal *);
+    extern void dgecon_(char *, 
 	     integer *, doublereal *, integer *, doublereal *, doublereal *, 
-	    doublereal *, integer *, integer *), dlassq_(integer *, 
+	    doublereal *, integer *, integer *);
+    extern int dlassq_(integer *, 
 	    doublereal *, integer *, doublereal *, doublereal *), dlaswp_(
 	    integer *, doublereal *, integer *, integer *, integer *, integer 
 	    *, integer *);

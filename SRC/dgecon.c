@@ -17,7 +17,7 @@
 
 static integer c__1 = 1;
 
-/* Subroutine */ int dgecon_(char *norm, integer *n, doublereal *a, integer *
+/* Subroutine */ void dgecon_(char *norm, integer *n, doublereal *a, integer *
 	lda, doublereal *anorm, doublereal *rcond, doublereal *work, integer *
 	iwork, integer *info)
 {
@@ -145,7 +145,7 @@ static integer c__1 = 1;
     if (*info != 0) {
 	i__1 = -(*info);
 	xerbla_("DGECON", &i__1);
-	return 0;
+	return;
     }
 
 /*     Quick return if possible */
@@ -153,9 +153,9 @@ static integer c__1 = 1;
     *rcond = 0.;
     if (*n == 0) {
 	*rcond = 1.;
-	return 0;
+	return;
     } else if (*anorm == 0.) {
-	return 0;
+	return;
     }
 
     smlnum = dlamch_("Safe minimum");
@@ -219,7 +219,7 @@ L10:
     }
 
 L20:
-    return 0;
+    return;
 
 /*     End of DGECON */
 

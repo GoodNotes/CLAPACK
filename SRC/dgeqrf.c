@@ -20,7 +20,7 @@ static integer c_n1 = -1;
 static integer c__3 = 3;
 static integer c__2 = 2;
 
-/* Subroutine */ int dgeqrf_(integer *m, integer *n, doublereal *a, integer *
+/* Subroutine */ void dgeqrf_(integer *m, integer *n, doublereal *a, integer *
 	lda, doublereal *tau, doublereal *work, integer *lwork, integer *info)
 {
     /* System generated locals */
@@ -151,9 +151,9 @@ static integer c__2 = 2;
     if (*info != 0) {
 	i__1 = -(*info);
 	xerbla_("DGEQRF", &i__1);
-	return 0;
+	return;
     } else if (lquery) {
-	return 0;
+	return;
     }
 
 /*     Quick return if possible */
@@ -161,7 +161,7 @@ static integer c__2 = 2;
     k = min(*m,*n);
     if (k == 0) {
 	work[1] = 1.;
-	return 0;
+	return;
     }
 
     nbmin = 2;
@@ -245,7 +245,7 @@ static integer c__2 = 2;
     }
 
     work[1] = (doublereal) iws;
-    return 0;
+    return;
 
 /*     End of DGEQRF */
 

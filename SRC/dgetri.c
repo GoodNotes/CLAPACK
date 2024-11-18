@@ -21,7 +21,7 @@ static integer c__2 = 2;
 static doublereal c_b20 = -1.;
 static doublereal c_b22 = 1.;
 
-/* Subroutine */ int dgetri_(integer *n, doublereal *a, integer *lda, integer 
+/* Subroutine */ void dgetri_(integer *n, doublereal *a, integer *lda, integer 
 	*ipiv, doublereal *work, integer *lwork, integer *info)
 {
     /* System generated locals */
@@ -144,15 +144,15 @@ static doublereal c_b22 = 1.;
     if (*info != 0) {
 	i__1 = -(*info);
 	xerbla_("DGETRI", &i__1);
-	return 0;
+	return;
     } else if (lquery) {
-	return 0;
+	return;
     }
 
 /*     Quick return if possible */
 
     if (*n == 0) {
-	return 0;
+	return;
     }
 
 /*     Form inv(U).  If INFO > 0 from DTRTRI, then U is singular, */
@@ -160,7 +160,7 @@ static doublereal c_b22 = 1.;
 
     dtrtri_("Upper", "Non-unit", n, &a[a_offset], lda, info);
     if (*info > 0) {
-	return 0;
+	return;
     }
 
     nbmin = 2;
@@ -257,7 +257,7 @@ static doublereal c_b22 = 1.;
     }
 
     work[1] = (doublereal) iws;
-    return 0;
+    return;
 
 /*     End of DGETRI */
 

@@ -22,7 +22,7 @@ static integer c__0 = 0;
 static integer c__1 = 1;
 static doublereal c_b82 = 0.;
 
-/* Subroutine */ int dgelsd_(integer *m, integer *n, integer *nrhs, 
+/* Subroutine */ void dgelsd_(integer *m, integer *n, integer *nrhs, 
 	doublereal *a, integer *lda, doublereal *b, integer *ldb, doublereal *
 	s, doublereal *rcond, integer *rank, doublereal *work, integer *lwork, 
 	 integer *iwork, integer *info)
@@ -45,15 +45,17 @@ static doublereal c_b82 = 0.;
 	     integer *);
     extern doublereal dlamch_(char *), dlange_(char *, integer *, 
 	    integer *, doublereal *, integer *, doublereal *);
-    extern /* Subroutine */ int dgelqf_(integer *, integer *, doublereal *, 
-	    integer *, doublereal *, doublereal *, integer *, integer *), 
-	    dlalsd_(char *, integer *, integer *, integer *, doublereal *, 
+    extern /* Subroutine */ void dgelqf_(integer *, integer *, doublereal *, 
+	    integer *, doublereal *, doublereal *, integer *, integer *);
+    extern int dlalsd_(char *, integer *, integer *, integer *, doublereal *, 
 	    doublereal *, doublereal *, integer *, doublereal *, integer *, 
 	    doublereal *, integer *, integer *), dlascl_(char *, 
 	    integer *, integer *, doublereal *, doublereal *, integer *, 
-	    integer *, doublereal *, integer *, integer *), dgeqrf_(
+	    integer *, doublereal *, integer *, integer *);
+    extern void dgeqrf_(
 	    integer *, integer *, doublereal *, integer *, doublereal *, 
-	    doublereal *, integer *, integer *), dlacpy_(char *, integer *, 
+	    doublereal *, integer *, integer *);
+    extern int dlacpy_(char *, integer *, 
 	    integer *, doublereal *, integer *, doublereal *, integer *), dlaset_(char *, integer *, integer *, doublereal *, 
 	    doublereal *, doublereal *, integer *), xerbla_(char *, 
 	    integer *);
@@ -390,7 +392,7 @@ static doublereal c_b82 = 0.;
     if (*info != 0) {
 	i__1 = -(*info);
 	xerbla_("DGELSD", &i__1);
-	return 0;
+	return;
     } else if (lquery) {
 	goto L10;
     }
@@ -399,7 +401,7 @@ static doublereal c_b82 = 0.;
 
     if (*m == 0 || *n == 0) {
 	*rank = 0;
-	return 0;
+	return;
     }
 
 /*     Get machine parameters. */
@@ -686,7 +688,7 @@ static doublereal c_b82 = 0.;
 
 L10:
     work[1] = (doublereal) maxwrk;
-    return 0;
+    return;
 
 /*     End of DGELSD */
 
