@@ -64,9 +64,9 @@ static doublereal c_b60 = 1.;
 	    *, doublereal *, integer *, integer *, doublereal *, integer *, 
 	    integer *);
     logical ilascl, ilbscl;
-    extern /* Subroutine */ int dgeqrf_(integer *, integer *, doublereal *, 
-	    integer *, doublereal *, doublereal *, integer *, integer *), 
-	    dlacpy_(char *, integer *, integer *, doublereal *, integer *, 
+    extern /* Subroutine */ void dgeqrf_(integer *, integer *, doublereal *, 
+	    integer *, doublereal *, doublereal *, integer *, integer *); 
+    extern int dlacpy_(char *, integer *, integer *, doublereal *, integer *, 
 	    doublereal *, integer *), dlaset_(char *, integer *, 
 	    integer *, doublereal *, doublereal *, doublereal *, integer *);
     logical ldumma[1];
@@ -90,7 +90,7 @@ static doublereal c_b60 = 1.;
 	    integer *, integer *);
     integer ijobvr;
     logical wantsb;
-    extern /* Subroutine */ int dorgqr_(integer *, integer *, integer *, 
+    extern /* Subroutine */ void dorgqr_(integer *, integer *, integer *, 
 	    doublereal *, integer *, doublereal *, doublereal *, integer *, 
 	    integer *);
     doublereal anrmto;

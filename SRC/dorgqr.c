@@ -20,7 +20,7 @@ static integer c_n1 = -1;
 static integer c__3 = 3;
 static integer c__2 = 2;
 
-/* Subroutine */ int dorgqr_(integer *m, integer *n, integer *k, doublereal *
+/* Subroutine */ void dorgqr_(integer *m, integer *n, integer *k, doublereal *
 	a, integer *lda, doublereal *tau, doublereal *work, integer *lwork, 
 	integer *info)
 {
@@ -148,16 +148,16 @@ static integer c__2 = 2;
     if (*info != 0) {
 	i__1 = -(*info);
 	xerbla_("DORGQR", &i__1);
-	return 0;
+	return;
     } else if (lquery) {
-	return 0;
+	return;
     }
 
 /*     Quick return if possible */
 
     if (*n <= 0) {
 	work[1] = 1.;
-	return 0;
+	return;
     }
 
     nbmin = 2;
@@ -274,7 +274,7 @@ static integer c__2 = 2;
     }
 
     work[1] = (doublereal) iws;
-    return 0;
+    return;
 
 /*     End of DORGQR */
 

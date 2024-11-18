@@ -20,7 +20,7 @@ static integer c_n1 = -1;
 static doublereal c_b16 = 1.;
 static doublereal c_b19 = -1.;
 
-/* Subroutine */ int dgetrf_(integer *m, integer *n, doublereal *a, integer *
+/* Subroutine */ void dgetrf_(integer *m, integer *n, doublereal *a, integer *
 	lda, integer *ipiv, integer *info)
 {
     /* System generated locals */
@@ -129,13 +129,13 @@ static doublereal c_b19 = -1.;
     if (*info != 0) {
 	i__1 = -(*info);
 	xerbla_("DGETRF", &i__1);
-	return 0;
+	return;
     }
 
 /*     Quick return if possible */
 
     if (*m == 0 || *n == 0) {
-	return 0;
+	return;
     }
 
 /*     Determine the block size for this environment. */
@@ -212,7 +212,7 @@ static doublereal c_b19 = -1.;
 /* L20: */
 	}
     }
-    return 0;
+    return;
 
 /*     End of DGETRF */
 

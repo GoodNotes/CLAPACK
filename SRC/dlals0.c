@@ -53,8 +53,8 @@ static integer c__0 = 0;
     extern /* Subroutine */ int dlascl_(char *, integer *, integer *, 
 	    doublereal *, doublereal *, integer *, integer *, doublereal *, 
 	    integer *, integer *), dlacpy_(char *, integer *, integer 
-	    *, doublereal *, integer *, doublereal *, integer *), 
-	    xerbla_(char *, integer *);
+	    *, doublereal *, integer *, doublereal *, integer *),
+            xerbla_(char *, integer *);
     doublereal dsigjp;
 
 
