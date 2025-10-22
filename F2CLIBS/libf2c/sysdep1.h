@@ -8,7 +8,7 @@
 #define OFF_T off64_t
 #endif
 
-#ifdef __linux__
+#if defined(__GLIBC__)
 #define USE_LARGEFILE
 #define OFF_T __off64_t
 #endif
