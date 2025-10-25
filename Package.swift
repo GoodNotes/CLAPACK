@@ -17,7 +17,10 @@ let package = Package(
       publicHeadersPath: "INCLUDE",
       cSettings: [
         .headerSearchPath("./F2CLIBS/libf2c/"),
-        .unsafeFlags(["-DINTEGER_STAR_8"]),
+        .define("INTEGER_STAR_8"),
+        .define("MSDOS", .when(platforms: [.windows])),
+        .define("NO_ISATTY", .when(platforms: [.windows])),
+        .define("USE_CLOCK", .when(platforms: [.windows])),
       ]
     ),
     .testTarget(
