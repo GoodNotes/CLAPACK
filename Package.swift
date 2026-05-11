@@ -17,7 +17,7 @@ let package = Package(
       publicHeadersPath: "INCLUDE",
       cSettings: [
         .headerSearchPath("./F2CLIBS/libf2c/"),
-        .unsafeFlags(["-DINTEGER_STAR_8"]),
+        .define("INTEGER_STAR_8"),
       ]
     ),
     .testTarget(
